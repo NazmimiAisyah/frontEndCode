@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        float:left;
+      }
+
+      .borderBlack{
+        border: 1px solid black;
+      }
+
+      ul{
+        list-style-type: none;
+      }
+
+      li a{
+        text-decoration: none;
+        color: black;
+        overflow-x:hidden;
+        height: 58px;
+      }
+
+      li{
+        padding: 20px;
+      }
+
+      .textColor{
+        color: black;
+      }
+
+      .navBtn{
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+      }
+
+      .header{
+        margin-left: 10%;
+        background-color:#97D2EC;
+        border-radius: 10px;
+        height:45px;
+      }
+
+      .nav{
+        width: 0px;
+        height: 100%;
+        overflow-x:hidden;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color:#D0B8A8;
+        border-radius: 5px;
+        border: none;
+        transition: 0.5s;
+      }
+
+      .closeBtn{
+        width:20px;
+        height:20px;
+        margin-left: 135px;
+        margin-top:10px;
+        cursor: default;
+      }
+
+      .subCat{
+        width: auto;
+        height: 0;
+        overflow-y:hidden;
+        margin-left:-15px;
+      }
+
+      .logo{
+        height:22px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .searchBar{
+        margin-left:600px;
+        margin-right:10px;
+        margin-top:13px;
+        margin-bottom: 13px;
+      }
+      .logIcon{
+        width:25px;
+        height:25px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-left:10px;
+
+      }
+      .loginBtn{
+        font-size:15px;
+        font-family:inherit;
+        background-color:#F2F2F2;
+        border-radius: 10px;
+
+      }
+      .regBtn{
+        font-size:15px;
+        font-family:inherit;
+        background-color:#F2F2F2;
+        border-radius: 10px;
+
+      }
+      .loginDiv{
+        position:fixed;
+        margin-top:45px;
+        width:auto;
+        height:auto;
+        overflow-x:hidden;
+        margin-left:80%;
+        display: none;
+      }
+      .movImg{
+        height: 300px;
+        margin-left: 10%;
+      }
+      .gif{
+        border-radius: 10px;
+      }
+      .catTitle{
+        height: 50px;
+        width: 400px;
+        color: white;
+        font-size: 40px;
+        margin-top: 5px;
+        border-radius: 10px;
+      }
+      .catItem{
+        height: 250px;
+        width: 100%;
+        background-color:#B7C4CF ;
+        border-radius: 10px;
+      }
+      .main{
+        background-color:#25316D;
+        margin-left: 10%;
+        border-radius: 10px;
+      }
+      .flex-container{
+        display:flex;
+        flex-wrap:nowrap;
+        overflow-x: scroll;
+      }
+      .flex-container > div{
+        background-color: pink;
+        width: 120px;
+        height: 189px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
+      .imgBook{
+        width: 120px;
+        height: 189px;
+      }
+
+
+
+
+
+[class*="col-"]{
+        float: left;}
+
+.col-1 {width: 10%;}
+.col-2 {width: 20%;}
+.col-3 {width: 30%;}
+.col-4 {width: 40%;}
+.col-5 {width: 50%;}
+.col-6 {width: 60%;}
+.col-7 {width: 70%;}
+.col-8 {width: 80%;}
+.col-9 {width: 90%;}
+.col-10 {width: 100%;}
+
+    </style>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      function openMenu(){
+        document.getElementById("sideNav").style.width="170px";
+
+      }
+      function openCat(){
+        document.getElementById("Cat").style.height= "auto";
+      }
+
+      function closeMenu(){
+        var x=document.getElementById("sideNav");
+        if (x.style.width==="0"){
+          x.style.width="170px";
+        }
+        else{
+          x.style.width="0";
+
+        }
+      }
+      function openLog(){
+        var x=document.getElementById("logReg");
+        if (x.style.display==="block"){
+          x.style.display="none";
+        }
+        else{
+          x.style.display="block";
+        }
+      }
+
+
+    </script>
+
+    <div class="nav borderBlack " id="sideNav">
+      <img src="img/cross.png"  onclick="closeMenu()" class="closeBtn">
+
+      <ul>
+        <li> <a href="#Home">Home</a></li>
+        <li> <a href="#Categories" onclick="openCat()">Categories</a></li>
+        <div class="subCat" id="Cat">
+          <ul>
+            <li> <a href="#bestsellers">Best sellers</a></li>
+            <li> <a href="#childrensbooks">Children's Books</a></li>
+            <li> <a href="#fiction">Fiction</a></li>
+            <li> <a href="#nonfiction">Non Fiction</a></li>
+          </ul>
+        </div>
+        <li> <a href="#Stationery">Stationery</a></li>
+        <li> <a href="#Bookorder">Book order</a></li>
+        <li> <a href="#Aboutus">About us</a></li>
+      </ul>
+
+    </div>
+    <div class="wrapper">
+      <div class="header col-8">
+        <img class="navBtn" onclick="openMenu()" src="img/3lines.png">
+        <img class="logo" src="img/logo.png">
+        <input class="searchBar" type="search" placeholder="Search">
+        <img class="logIcon"src="img/login.png" onclick="openLog()">
+      </div>
+      <div class="loginDiv" id="logReg">
+        <button class="loginBtn"type="button">Log in</button>
+        <button class="regBtn"type="Register">Register</button>
+      </div>
+      <div class="movImg col-8">
+        <img class="gif" src="img/gif.gif">
+
+      </div>
+      <div class="main col-8">
+        <div class=" catTitle">
+          <h5>Best sellers</h5>
+        </div>
+        <div class="flex-container catItem">
+          <div class="imgContainer">
+            <img src="img/one.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/two.tiff" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/three.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+              <img src="img/four.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/five.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/six.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/seven.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/eight.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nine.jpg" class="imgBook">
+          </div>
+        </div>
+        <div class="catTitle">
+          <h5>Children's Books</h5>
+        </div>
+        <div class="flex-container catItem">
+          <div class="imgContainer">
+            <img src="img/child1.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/child2.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/child3.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/child4.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/child5.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/child6.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/child7.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/child8.jpg" class="imgBook">
+          </div>
+        </div>
+        <div class="catTitle">
+          <h5>Fiction</h5>
+        </div>
+        <div class="flex-container catItem">
+          <div class="imgContainer">
+            <img src="img/fic1.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/fic2.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/fic3.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/fic4.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/fic5.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/fic6.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/fic7.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/fic8.jpg" class="imgBook">
+          </div>
+        </div>
+        <div class="catTitle">
+          <h5>Non Fiction</h5>
+        </div>
+        <div class="flex-container catItem">
+          <div class="imgContainer">
+            <img src="img/nonfic1.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nonfic2.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nonfic3.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nonfic4.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nonfic5.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nonfic6.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nonfic7.jpg" class="imgBook">
+          </div>
+          <div class="imgContainer">
+            <img src="img/nonfic8.jpg" class="imgBook">
+          </div>
+        </div>
+
+      </div>
+      <div class="footer">
+
+      </div>
+
+    </div>
+
+
+  </body>
+</html>
